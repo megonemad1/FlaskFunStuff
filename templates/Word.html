@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title> Test imput page</title>
+		<meta name="viewport" Content="width=device-width, inital-scale=0.1">
+		<link rel="stylesheet" href="static/bootstrap.min.css" media="screen">
+	</head>
+	<body>
+		<div class="container">
+			<h1> this is a textbox </h1>
+			<br>
+			<form action="" method="post">
+				<input type = "text" placeholder="enter Your Mindless drivvel here" name="username" value="{{request.form.username }}">
+				
+			<br>
+				    {% if Msg %}
+						<p class="Msg"> you said {{Msg}}</p>
+					{% endif %}
+			
+			<select name="options" width="300px" value="{{request.form.options }}">
+				{% for o in option_list %}
+				    <option name="{{ o.optid }}" SELECTED>{{ o.optid }}</option>
+				{% endfor %}
+			</select>
+				    <br>
+				    <br>
+				    {% if optid %}
+						<p class="optid"> you said {{optid}}</p>
+					{% endif %}
+			<input class="button1" type="submit" value="Select">
+			</form>
+			
+			
+			
+	</body>
+</html>
